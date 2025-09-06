@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UI Controls Examples</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="container">
+    <h1>UI controls examples</h1>
+    <p class="muted">
+      Завдання: UI for students.
+      Виконав: Усеінов Есфер ІП-31.
+    </p>
+  </header>
+
+  <main class="container">
+
+    <!-- 1. Radiobutton -->
+    <section class="control" id="radiobutton">
+      <h2>1. Radiobutton</h2>
+      <p>
+        Один з елементів графічного інтерфейсу користувача, який
+        дозволяє обрати один варіант з наведених. Застосовується в тестах/опитуваннях,
+        при виборі опції в налаштуваннях тощо.
+      </p>
+
+      <fieldset class="examples">
+        <legend>Улюблена палочка TWIX:</legend>
+        <label><input type="radio" name="twix" value="left" /> Ліва</label>
+        <label><input type="radio" name="twix" value="right" /> Права</label>
+        <label><input type="radio" name="twix" value="neither" /> Жодна</label>
+        <label><input type="radio" name="twix" value="both" /> Обидві</label>
+      </fieldset>
+    </section>
+
+    <!-- 2. Checkbox -->
+    <section class="control" id="checkbox">
+      <h2>2. Checkbox</h2>
+      <p>
+        Один з елементів графічного інтерфейсу користувача (надалі не буду це дублювати), який
+        дозволяє обрати кілька варіантів одночасно. Має ряд спільних із Radiobutton
+        сфер застосування, але з урахуванням особливостей, зокрема
+        в можливості перемикання декількох опцій одночасно.
+      </p>
+
+      <fieldset class="examples">
+        <legend>Оберіть улюблені кухні з переліку:</legend>
+        <label><input type="checkbox" value="italy" /> Італійська</label>
+        <label><input type="checkbox" value="ukraine" /> Українська</label>
+        <label><input type="checkbox" value="japan" /> Японська</label>
+        <label><input type="checkbox" value="france" /> Французька</label>
+      </fieldset>
+    </section>
+
+    <!-- 3. Text input -->
+    <section class="control" id="text-input">
+      <h2>3. Text input</h2>
+      <p>
+        Поле для введення тексту користувачем. Застосовується в полях пошуку,
+        введення інформації в формах, при вході в акаунт чи реєстрації тощо
+      </p>
+
+      <div class="examples grid-2">
+        <div class="field">
+          <label for="emailInput">Email</label>
+          <input id="emailInput" type="email" placeholder="name@example.com" />
+        </div>
+        <div class="field">
+          <label for="passwordInput">Пароль</label>
+          <input id="passwordInput" type="password" placeholder="Enter your password" />
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Tabs -->
+    <section class="control" id="tabs">
+      <h2>4. Tabs</h2>
+      <p>
+        Дозволяє перемикають видимий контент, відображаючи те,
+        що відповідає обраному користувачем табу. Застосовується при, наприклад,
+        відображенні одного з різних варіантів рішення.
+      </p>
+
+      <div class="tabs">
+        <div class="tablist" role="tablist" aria-label="Вкладки">
+          <button role="tab" aria-selected="true" aria-controls="tab-python" id="tab-btn-python" class="tab-btn active"
+            data-tab="python">
+            Python
+          </button>
+          <button role="tab" aria-selected="false" aria-controls="tab-js" id="tab-btn-js" class="tab-btn" data-tab="js"
+            tabindex="-1">
+            JavaScript
+          </button>
+          <button role="tab" aria-selected="false" aria-controls="tab-cs" id="tab-btn-cs" class="tab-btn" data-tab="cs"
+            tabindex="-1">
+            C#
+          </button>
+        </div>
+
+        <div id="tab-python" role="tabpanel" aria-labelledby="tab-btn-python" class="tab-panel">
+          print("Hello, World!")
+        </div>
+        <div id="tab-js" role="tabpanel" aria-labelledby="tab-btn-js" class="tab-panel" hidden>
+          console.log("Hello, World!");
+        </div>
+        <div id="tab-cs" role="tabpanel" aria-labelledby="tab-btn-cs" class="tab-panel" hidden>
+          Console.WriteLine("Hello, World!"); // при Top-level statements
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Button -->
+    <section class="control" id="button">
+      <h2>5. Button</h2>
+      <p>
+        Дозволяють запускати дію після натискання. Типовим прикладом застосування є
+        підтвердження чи скасування дії.
+      </p>
+
+      <div class="examples">
+        <button id="submitBtn" class="btn primary">Submit</button>
+        <button id="cancelBtn" class="btn">Cancel</button>
+      </div>
+      <p class="muted small">
+        Submit покаже повідомлення про успіх, а Cancel - про скасування
+      </p>
+    </section>
+
+    <!-- 6. Text label -->
+    <section class="control" id="text-label">
+      <h2>6. Text label</h2>
+      <p>
+        Напис. Застосовується для пояснень та приміток до елементів GUI.
+      </p>
+
+      <div class="examples grid-2">
+        <div class="field">
+          <label for="label-username">Я label для ніку</label>
+          <input id="label-username" type="text" placeholder="username" />
+        </div>
+        <div class="field">
+          <label for="label-age">Я label для віку</label>
+          <input id="label-age" type="number" min="0" max="120" placeholder="18" />
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Link -->
+    <section class="control" id="link">
+      <h2>7. Link</h2>
+      <p>
+        Дозволяють переходити на інші ресурси або частини сторінки.
+        Наприклад, класика: посилання на рікрол.
+      </p>
+
+      <div class="examples">
+        <a class="link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener">Рікрол</a>
+        <a class="link" href="#tabs">Перейти до Tabs</a>
+      </div>
+    </section>
+
+    <!-- 8. Tooltip -->
+    <section class="control" id="tooltip">
+      <h2>8. Tooltip</h2>
+      <p>
+        Підказка, яка з'являється при наведенні на елемент. Такі підказки дозволяють зрозуміти,
+        що треба вводити, або для чого потрібен той чи інший компонент.
+      </p>
+
+      <div class="examples">
+        <span class="tooltip" tabindex="0" aria-describedby="tt1">Наведіться на мене
+          <span class="tooltip-content" role="tooltip" id="tt1">Підказую</span>
+        </span>
+        <span class="tooltip" tabindex="0" aria-describedby="tt2">Або на мене
+          <span class="tooltip-content" role="tooltip" id="tt2">І я підказую</span>
+        </span>
+        <span class="tooltip" tabindex="0" aria-describedby="tt3">А на мене не треба!
+          <span class="tooltip-content" role="tooltip" id="tt3">Привіт :3</span>
+        </span>
+      </div>
+    </section>
+
+    <!-- 9. Dropdown list -->
+    <section class="control" id="dropdown">
+      <h2>9. Dropdown list</h2>
+      <p>
+        Випадаючий список, що дозволяє обрати один з варіантів. Гарно підходить, коли, наприклад,
+        треба зекономити місце на екрані юзера. Приклад: вибір характеристик для замовлення.
+      </p>
+
+      <div class="examples">
+        <label>
+          Розмір:
+          <select>
+            <option>Маленька</option>
+            <option>Середня</option>
+            <option>Велика</option>
+          </select>
+        </label>
+        <label>
+          Соус:
+          <select>
+            <option>Сирний</option>
+            <option>Гірчиця</option>
+            <option>Кисло-солодкий</option>
+            <option>Без соусу</option>
+          </select>
+        </label>
+      </div>
+    </section>
+
+    <!-- 10. Data grid -->
+    <section class="control" id="data-grid">
+      <h2>10. Data grid</h2>
+      <p>
+        Таблиця, з якою користувач може взаємодіяти. Широко застосовується для
+        зручного представлення даних. Наприклад, щоб показати товари з категоріями.
+        Може підтримувати сортування, пошук та пагінацію.
+      </p>
+
+      <div class="toolbar">
+        <input type="text" id="search" placeholder="Пошук...">
+      </div>
+
+      <div class="table-wrap">
+        <table id="grid">
+          <thead>
+            <tr>
+              <th data-col="id">ID (тиць)</th>
+              <th data-col="name">Назва (тиць)</th>
+              <th data-col="category">Категорія (тиць)</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="pagination">
+        <button id="prev">«</button>
+        <span id="page-info"></span>
+        <button id="next">»</button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="container muted small">
+    <p>А я просто футер, привітик</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
